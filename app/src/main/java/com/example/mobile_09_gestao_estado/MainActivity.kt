@@ -59,6 +59,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun JurosScreen(modifier: Modifier = Modifier) {
+    val corApp = Color(136, 38, 199)
     var capital by remember {
         mutableStateOf("")
     }
@@ -86,7 +87,7 @@ fun JurosScreen(modifier: Modifier = Modifier) {
             Column(
                 modifier = Modifier.fillMaxWidth()
                     .height(100.dp)
-                    .background(color = Color(136, 38, 199, 255))
+                    .background(color = corApp)
                     .padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -131,6 +132,7 @@ fun JurosScreen(modifier: Modifier = Modifier) {
                             placeholder = "Quanto deseja investir?",
                             keyboardType = KeyboardType.Decimal,
                             modifier = Modifier.fillMaxWidth(),
+                            corApp = corApp,
                             value = capital,
                             atualizarValor = {
 //                                novoValor ->
@@ -148,6 +150,7 @@ fun JurosScreen(modifier: Modifier = Modifier) {
                             placeholder = "Qual a taxa de juros mensal?",
                             keyboardType = KeyboardType.Decimal,
                             modifier = Modifier.fillMaxWidth(),
+                            corApp = corApp,
                             value = taxa,
                             atualizarValor = {
                                 taxa = it
@@ -158,6 +161,7 @@ fun JurosScreen(modifier: Modifier = Modifier) {
                             placeholder = "Qual o tempo em meses?",
                             keyboardType = KeyboardType.Decimal,
                             modifier = Modifier.fillMaxWidth(),
+                            corApp = corApp,
                             value = tempo,
                             atualizarValor = {
                                 tempo = it
